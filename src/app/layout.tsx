@@ -1,3 +1,4 @@
+import Navbar from './components/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -15,7 +16,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-neutral-900 text-white`}>
+        <Navbar />
+        <div
+        id='page-top-spacer'
+          className="
+            h-12
+            bg-gradient-to-t
+            from-transparent
+            to-neutral-800"
+          >
+          </div>
+          {children}
+          <div id="page-bottom-spacer" className="h-16"></div>
+      </body>
     </html>
   )
 }
